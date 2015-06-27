@@ -3,10 +3,11 @@
 <h2 class="title"><%= @post.title %></h2>
 
 <p class="date">
-	Submitted <%= time_ago_in_words(@post.created_at) %> Ago	
+	Submitted <%= time_ago_in_words(@post.created_at) %> Ago<br/>
+	<!-- Submitted < % = time_ago_in_words post.created_at %> Ago (this line doesn't work here)-->
 </p>
 
-# Adds the body content
+<!--# Adds the body content-->
 <p class="body">
 	<%= @post.body %>
 </p>

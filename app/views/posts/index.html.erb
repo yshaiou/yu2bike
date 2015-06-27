@@ -7,6 +7,7 @@
 		<p><%= post.body %></p>
 		
 		<p class="date">
+			Submitted <%= time_ago_in_words post.created_at %> Ago<br/>
 			<%= post.created_at.strftime("%B %d, %Y") %>
 		</p>
 	</div>
