@@ -1,0 +1,12 @@
+<h1>New Post page</h1>
+
+<h2 class="title"><%= @post.title %></h2>
+
+<p class="date">
+	Submitted <%= time_ago_in_words(@post.created_at) %> Ago	
+</p>
+
+# Adds the body content
+<p class="body">
+	<%= @post.body %>
+</p>

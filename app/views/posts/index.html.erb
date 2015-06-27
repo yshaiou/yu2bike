@@ -1,0 +1,14 @@
+<% @posts.each do |post| %>
+	<div class="post_wrapper">
+		<h2 class="title">
+			<!-- with the equal sign (=) the line will not work<% link_to post.title, post %>-->
+			<%= link_to post.title, post %>
+		</h2>
+		<p><%= post.body %></p>
+		
+		<p class="date">
+			<%= post.created_at.strftime("%B %d, %Y") %>
+		</p>
+	</div>
+
+<% end %>
