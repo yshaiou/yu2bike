@@ -22,8 +22,33 @@ class PostsController < ApplicationController
   	if @post.save
   		redirect_to @post
   	else
+  		# redirect /post/new 
   		render 'new'
   	end
+  end
+
+  def edit
+  	#edit a post
+  	@post = Post.find(params[:id])
+  end
+
+  def update
+  	#update a post
+  	@post = Post.find(params[:id])
+
+  	if @post.update(params[:post].permit(:title, :body))
+  		redirect_to @post
+  	else
+  		render 'edit'
+  	end
+  end
+
+  def destroy
+  	@post = Post.find(params[:id])
+
+  	@post.destroy
+
+  	redirect_to root_path
   end
 
   private
