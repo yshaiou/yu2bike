@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  #for authencation display users will ahve to login to see content or comments
+  before_action :authenticate_user!, except: [:index, :show]
+
   def index
   	#this will show posts in DESC order in the index page
   	@posts = Post.all.order('created_at DESC')

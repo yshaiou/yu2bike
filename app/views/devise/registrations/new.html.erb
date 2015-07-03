@@ -1,0 +1,55 @@
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: images-url('');">
+    <%= image_tag 'shaeffer-farm-orange.jpg', :class => "intro-header", :style => "position: absolute; left: 0px; top: -65%; right: auto; bottom: auto; height: auto; width: 100%;"%>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>Yu&sup2; Bike</h1>
+                    <hr class="small">
+                    <span class="subheading"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-preview">
+              <h2>Sign up</h2>
+
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <%= devise_error_messages! %>
+
+                <div class="field">
+                  <%= f.label :email %><br />
+                  <%= f.email_field :email, autofocus: true %>
+                </div>
+
+                <div class="field">
+                  <%= f.label :password %>
+                  <% if @validatable %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                  <% end %><br />
+                  <%= f.password_field :password, autocomplete: "off" %>
+                </div>
+
+                <div class="field">
+                  <%= f.label :password_confirmation %><br />
+                  <%= f.password_field :password_confirmation, autocomplete: "off" %>
+                </div>
+
+                <div class="actions">
+                  <%= f.submit "Sign up" %>
+                </div>
+              <% end %>
+
+              <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>

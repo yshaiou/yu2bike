@@ -6,11 +6,13 @@
             <div class="post-preview">
 
 	            <h2 class="post-title"><%= @post.title %></h2><br>
-	            <%= link_to 'Back', root_path %>
-				|
-	            <%= link_to 'Edit', edit_post_path(@post) %>
-	            |
-	            <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
+	            | <%= link_to 'Back', root_path %> |
+				<% if user_signed_in? %> 
+					
+		            <%= link_to 'Edit', edit_post_path(@post) %>
+		            |
+		            <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
+		        <% end %>
 
 	            <p class="date">Submitted <%= time_ago_in_words(@post.created_at) %> Ago<br/>
 				<!-- Submitted < % = time_ago_in_words post.created_at %> Ago (this line doesn't work here)-->
@@ -24,8 +26,11 @@
 					<h2><%= @post.comments.count %> Comments</h2>
 					<%= render @post.comments %>
 
-					<h3>Add a comment:</h3>
-					<%= render "comments/form" %>
+					<% if user_signed_in? %>
+						<h3>Add a comment:</h3>
+
+						<%= render "comments/form" %>
+					<% end %>
 
 				</div>
 			</div>

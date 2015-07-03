@@ -11,7 +11,7 @@
             </button>
             <!--<div class="navbar-brand"><%= link_to "YuSquare Bike", root_path %></div>-->
             <div class="navbar-brand">
-                <%= link_to "YuSquared Bike", root_path %>
+                <%= link_to 'Yu&sup2; Bike', root_path %>
             </div>
         </div>
 
@@ -22,7 +22,7 @@
                     <%= link_to "Home", root_path %>
                 </li>
                 <li>
-                    <!-- link_to is related to routes.rb file, if you have about then the path def will be about_path, if you have about-yu2bike then the path will be about-yu2bike_path starts from page controller -->
+                    <!-- link_to is related to routes.rb file, if you have about then the path def will be about_path, if you have aboutyu2bike then the path will be aboutyu2bike_path starts from "page controller" -->
                     <%= link_to "About Us", aboutyu2bike_path %>
                 </li>
                 <li>
@@ -31,6 +31,16 @@
                 <li>
                     <%= link_to "Contact", root_path %>
                 </li>
+                <!-- Also, we only want to show the buttons in the header if the user is signed in,
+                # so wrap that in an if statement-->
+                <li>
+                  <% if user_signed_in? %> 
+                    <div class="buttons"> 
+                      <!--<button class="button"><%= link_to "New Post", new_post_path %></button> -->
+                      <%= link_to "Log Out", root_path %>
+                    </div> 
+                  <% end %> 
+              </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
