@@ -11,13 +11,18 @@
             </button>
             <!--<div class="navbar-brand"><%= link_to "YuSquare Bike", root_path %></div>-->
             <div class="navbar-brand">
-                <%= link_to 'Yu&sup2; Bike', root_path %>
+                <%= link_to 'YuSquared Bike', root_path %>
             </div>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <% if user_signed_in? %>
+                    <p>Welcome <%= current_user %></p>
+                    <% end %>
+                </li>
                 <li>
                     <%= link_to "Home", root_path %>
                 </li>
@@ -34,11 +39,17 @@
                 <!-- Also, we only want to show the buttons in the header if the user is signed in,
                 # so wrap that in an if statement-->
                 <li>
+
+                </li>
+                <li>
+                    
+                </li>
                   <% if user_signed_in? %> 
-                    <div class="buttons"> 
+                    <!--<div class="buttons"> -->
                       <!--<button class="button"><%= link_to "New Post", new_post_path %></button> -->
-                      <%= link_to "Log Out", root_path %>
-                    </div> 
+                      <%= link_to("Log Out", destroy_user_session_path, :method => :delete) %>
+                      
+                    <!--</div> -->
                   <% end %> 
               </li>
             </ul>

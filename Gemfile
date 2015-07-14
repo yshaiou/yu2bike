@@ -24,6 +24,9 @@ gem 'aws-sdk'
 # for credential logins 07/03/15
 gem 'devise', '~> 3.4.1'
 
+# GOOGLE API
+gem "omniauth-google-oauth2"
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

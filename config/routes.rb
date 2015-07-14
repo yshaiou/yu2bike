@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
+
+  #devise_for :admins
   #credential use
-  devise_for :users
+  #devise_for :users
   
+  #google api login
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  #resources :products
+  #root 'products#index'
+
   resources :posts do
     resources :comments
   end
