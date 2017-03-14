@@ -6,6 +6,7 @@ gem 'rails', '4.2.2'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3' #default ROR DB
 
+gem ruby '2.2.6'
 # for using MySQL
 gem 'mysql2'
 
